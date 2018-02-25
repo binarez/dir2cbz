@@ -14,7 +14,7 @@ def get_immediate_subdirectories(a_dir):
 def zipdir(path, ziph):
     for root, dirs, files in os.walk(path):
         for file in files:
-            ziph.write(os.path.join(root, file))
+            ziph.write(os.path.join(root, file), file)
 
 subdirs = get_immediate_subdirectories(os.getcwd())
 for subdir in subdirs:
