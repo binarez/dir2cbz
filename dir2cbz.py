@@ -18,6 +18,8 @@ def zipdir(path, ziph):
 
 subdirs = get_immediate_subdirectories(os.getcwd())
 for subdir in subdirs:
-	zipf = zipfile.ZipFile( subdir + '.cbz', 'w', zipfile.ZIP_DEFLATED)
+	cbz_filename = subdir + '.cbz'
+	zipf = zipfile.ZipFile( cbz_filename, 'w', zipfile.ZIP_DEFLATED)
 	zipdir(subdir, zipf)
 	zipf.close()
+	print('Created : ' + subdir + '.cbz')
